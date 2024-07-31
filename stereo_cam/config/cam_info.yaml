@@ -1,0 +1,6 @@
+img_width: 1280
+img_height: 480
+frame_rate: 30
+auto_exposure: True
+exposure_level: -13 #-1 to -14 640ms to 0.07ms
+auto_white_balance: True
