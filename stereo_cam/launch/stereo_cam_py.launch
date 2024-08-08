@@ -1,0 +1,6 @@
+<launch>
+    <!-- Launch the stereo_cam_publisher.py node -->
+    <rosparam command="load" file="$(find stereo_cam)/config/cam_info.yaml" />
+    <node name="stereo_cam_publisher_node" pkg="stereo_cam" type="stereo_cam_publisher.py" output="screen">
+    </node>
+</launch>
