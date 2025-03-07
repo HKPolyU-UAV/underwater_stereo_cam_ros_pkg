@@ -63,10 +63,19 @@ int main(int argc, char** argv)
     //cap.open(0);
     //cap.open(0);
     cv::VideoCapture cap(cam_port_name,cv::CAP_V4L2);
-    if (image_format == "mjpg")
-        {std::cout << "Image Format :MJPG: " << cap.set(CAP_PROP_FOURCC, cv::VideoWriter::fourcc('M>
-    else
-        {std::cout << "Image Format :YUYV: " << cap.set(CAP_PROP_FOURCC, cv::VideoWriter::fourcc('Y>
+    // if (image_format == "mjpg")
+    //     {std::cout << "Image Format :MJPG: " << cap.set(CAP_PROP_FOURCC, cv::VideoWriter::fourcc('M>
+    // else
+    //     {std::cout << "Image Format :YUYV: " << cap.set(CAP_PROP_FOURCC, cv::VideoWriter::fourcc('Y>
+
+    if (image_format == "mjpg") {
+            std::cout << "Image Format :MJPG: " << cap.set(cv::CAP_PROP_FOURCC, cv::VideoWriter::fourcc('M', 'J', 'P', 'G')) << std::endl;
+        } else {
+            std::cout << "Image Format :YUYV: " << cap.set(cv::CAP_PROP_FOURCC, cv::VideoWriter::fourcc('Y', 'U', 'Y', 'V')) << std::endl;
+    }
+    
+
+
     //cap.set(CAP_PROP_FPS,fps);
     cap.set(3,img_w);
     cap.set(4, img_h);
