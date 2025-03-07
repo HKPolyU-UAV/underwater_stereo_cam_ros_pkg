@@ -130,7 +130,8 @@ int main(int argc, char** argv)
                 header.seq = img_counter++; // user defined counter
                 header.stamp = ros::Time::now(); // time
                 //std::cout<<header.stamp<<endl;
-                img_bridge = cv_bridge::CvImage(header, sensor_msgs::image_encodings::RGB8, cv_fram>
+                img_bridge = cv_bridge::CvImage(header, sensor_msgs::image_encodings::RGB8, cv_frame>
+                    
                 img_bridge.toImageMsg(img_msg);
                 rawpub.publish(img_msg);
 
