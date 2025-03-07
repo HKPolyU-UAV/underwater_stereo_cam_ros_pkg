@@ -18,8 +18,8 @@ int main(int argc, char** argv)
     image_transport::ImageTransport it(nh);
 
     // Parameters
-    int img_w{1280};
-    int img_h{480};
+    int img_w{1920};
+    int img_h{960};
     int fps{30};
     int queue_size{10};
     bool auto_exposure{true};
