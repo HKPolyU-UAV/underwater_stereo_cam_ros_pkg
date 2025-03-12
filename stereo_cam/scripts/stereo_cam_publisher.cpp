@@ -117,14 +117,14 @@ int main(int argc, char** argv)
         }
 
         // Convert to RGB (from BGR)
-        cv::cvtColor(cv_frame, cv_frame, cv::COLOR_BGR2RGB);
+        // cv::cvtColor(cv_frame, cv_frame, cv::COLOR_BGR2RGB);
 
         // Create ROS Image Message
         std_msgs::Header header;
         header.seq = img_counter++;
         header.stamp = ros::Time::now();
         
-        img_bridge = cv_bridge::CvImage(header, sensor_msgs::image_encodings::RGB8, cv_frame);
+        img_bridge = cv_bridge::CvImage(header, sensor_msgs::image_encodings::BGR8, cv_frame);
         img_bridge.toImageMsg(img_msg);
         rawpub.publish(img_msg);
 
