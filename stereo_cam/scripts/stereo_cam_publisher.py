@@ -43,7 +43,8 @@ class Camera(object):
                         self.img_w,self.img_h,self.fps,
                         self.auto_exp, self.exp_level, self.auto_wb)
         rospy.loginfo('\n\n'+'*'*15+'CAMERA INFO'+'*'*15 + '\n' + output_info_exp + '\n' + output_info_cam + '\n' + '*'*15+'CAMERA INFO'+'*'*15+'\n\n')
-
+        print(self.cap.get(cv2.CAP_PROP_FRAME_WIDTH))
+        print(self.cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
 
     def run(self):
         if not self.cap.isOpened():
